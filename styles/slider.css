@@ -1,0 +1,75 @@
+/* The switch - the box around the slider */
+.slider_switch {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  height: 60%;
+}
+
+/* Hide default HTML checkbox */
+.slider_switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: none;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border: 5px solid #9e37cb;
+}
+.slider p{
+  color:  #9e37cb;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  transform:  translateY(-25%);
+  text-align: right;
+  padding-right:.25em;
+  transition: .5s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 4em;
+  width: 4em;
+  left: -4px;
+  top: -4px;
+  background: url('../Rasberry HA icon Bedroom 2.png') 50% 50% no-repeat;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background-size: cover;
+}
+
+input:checked + .slider {
+  background-color: none;
+  border: 5px solid #4717F6;
+}
+input:checked + .slider p{
+  text-align: left;
+  padding-left: .25em;
+  color: #4717f6;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14vw)
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+

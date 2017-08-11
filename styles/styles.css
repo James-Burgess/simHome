@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Poppins');
+body{
+	background: #0E0A1C;
+	max-width: 100vw;
+	overflow:  hidden;
+	margin: 0;
+
+}
+header{
+	background: #E7DFDD;
+	height: 60px;
+	width:  102vw;
+	border-radius: 0 0 2.5em 2.5em ;
+	margin-left: -1vw;
+}
+header nav ul{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	list-style: none;
+
+}
+header nav ul li{
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	line-height: 60px;
+
+}
+header nav ul li img{
+	height: 60px;
+}
+main{
+	height:  calc(100vh - 100px);
+}
+.switch_panel{
+	height: 50%;
+	width:  100%;
+	border-bottom:  4px solid white;
+	width:  102vw;
+	border-radius: 0 0 2.5em 2.5em ;
+	margin-left: -1vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#utilities{
+	border: none;
+}
+#light_image{
+	background: url("../lights.png") no-repeat;
+	height: 50%;
+	width: 20vw;
+	margin-left: 5vw;
+
+}
+#utility_image{
+	background: url("../utilities.png") no-repeat;
+	height: 50%;
+	width: 20vw;
+	margin-left: 5vw;
+}
+.buttons{
+	width:  80vw;
+	height: 80%;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+.switch{
+	height:  35%;
+	width:  30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.switch .btn{
+	background: none;
+	border-radius: 50vh ;
+	width:  90%;
+	height:  70%;
+	border: 5px solid #9e37cb;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 700;
+	font-size: 1.5em;
+	color:  #9e37cb;
+}
+.kill_switch{
+	position: relative;
+	padding-left: 30%;
+
+
+}
+.kill_switch .kill_btn{
+	width: 50px;
+	height:  50px;
+	background: url('../Rasberry HA icon Power Button.png') center;
+	background-size: cover;
+	border: none;
+	
+}
+h3{
+	margin-left: 10px;
+	color:  white;
+	font-family: 'Comfortaa', cursive;
+}
