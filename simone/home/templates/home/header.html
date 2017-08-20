@@ -1,0 +1,21 @@
+{% load staticfiles %}
+	
+<head>
+	<meta charset="UTF-8">
+	<title>Simone Home</title>
+<link rel="stylesheet" href="{% static '/home/styles.css' %}">
+</head>
+<body>
+	<div class="header">
+				<a href="/">home</a>
+				<a href="/moods">moods</a>
+				<a href="/admin">admin</a>
+	</div>
+	{% block content %}
+	{% endblock %}
+
+	
+	<script src="{% static '/home/scripts.js' %}"></script>
+</body>
+
+</html>
