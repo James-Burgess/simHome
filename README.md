@@ -1,4 +1,6 @@
 # simHome
-Frontend webdesign for my rasberry pi powered home automation system.
-Graphical Mockup by Ulli Synman (Loophole Studios, loophole.studio)
+Rasberry pi powered home automation system.
+Written in Django/Python/JS
+
+Graphics by Ulli Synman(loophole.studio)
 
