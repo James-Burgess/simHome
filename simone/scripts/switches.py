@@ -10,9 +10,8 @@ lightList = [4, 17, 18]
 #4 bed #17 bath #18 Lounge
 for i in lightList: 
     g.setup(i, g.OUT) 
-    g.output(i, g.HIGH)
 
-switchList = [23, 24, 25] 
+switchList = [23, 24] #, 25] 
 #23 bed #24 bath #25 extra
 for i in switchList:
         g.setup(i, g.IN, pull_up_down=g.PUD_UP)
@@ -28,21 +27,29 @@ def lightSwitch(num):
     sleep(.5)
 
 def main():
+        state = 0
         while True:
                 try:
-                        bed_input_state = g.input(23)
-                        bath_input_state = g.input(24)
-                        lounge_input_state = g.input(25)
+                    bed_input_state = g.input(23)
+                    bath_input_state = g.input(24)
+                    #lounge_input_state = g.input(25)
 
-                        if bed_input_state == False:
-                                lightSwitch(4)
+                    if bed_input_state == False:
+                            lightSwitch(4)
 
+                    
+                    if bath_input_state == False and state == 0:
+                            lightSwitch(17)
+                            state = 1
+                            print (state)
 
-                        if bath_input_state == False:
-                                lightSwitch(17)
+                    elif bath_input_state == False and state == 1:
+                            lightSwitch(18)
+                            state = 0
+                            print (state)
 
-                        if lounge_input_state == False:
-                                lightSwitch(18)
+                    # if lounge_input_state == False:
+                    #         lightSwitch(18)
 
 
                 except KeyboardInterrupt:
