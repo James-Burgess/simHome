@@ -6,12 +6,12 @@ from time import sleep
 g.setmode(g.BCM)
 
 #Setup Pins
-lightList = [4, 17, 18] 
+pinList = [18, 22, 27, 17]
 #4 bed #17 bath #18 Lounge
-for i in lightList: 
+for i in pinList: 
     g.setup(i, g.OUT) 
 
-switchList = [23, 24] #, 25] 
+switchList = [21, 20, 16, 12] #, 25] 
 #23 bed #24 bath #25 extra
 for i in switchList:
         g.setup(i, g.IN, pull_up_down=g.PUD_UP)
@@ -24,37 +24,31 @@ def lightSwitch(num):
     else:
       g.output(num,g.LOW)
       print("%s is on" %num)
-    sleep(.5)
+
+    
 
 def main():
         state = 0
         while True:
                 try:
-                    bed_input_state = g.input(23)
-                    bath_input_state = g.input(24)
-                    #lounge_input_state = g.input(25)
+                    bed_input_state = g.input(21)
+                    bath_input_state = g.input(20)
+                    lounge_input_state = g.input(16)
+                    outside_input_state = g.input(12)
 
                     if bed_input_state == False:
-                            lightSwitch(4)
-
-                    
-                    if bath_input_state == False and state == 0:
-                            lightSwitch(17)
-                            state = 1
-                            print (state)
-
-                    elif bath_input_state == False and state == 1:
                             lightSwitch(18)
-                            state = 0
-                            print (state)
-
-                    # if lounge_input_state == False:
-                    #         lightSwitch(18)
-
+                    if bath_input_state == False:
+                            lightSwitch(22)
+                    if lounge_input_state == False:
+                             lightSwitch(17)
+                    if outside_input_state == False:
+                             lightSwitch(27)
 
                 except KeyboardInterrupt:
                         print("Outies")
                         g.cleanup()
+
                 sleep(.5)
 
 if __name__ == "__main__":

@@ -6,13 +6,13 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
   def handle(self, *args, **options):
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(4,GPIO.OUT)
+    GPIO.setup(18,GPIO.OUT)
 
-    if (GPIO.input(4) == 0):
-      GPIO.output(4,GPIO.HIGH)
+    if (GPIO.input(18) == 0):
+      GPIO.output(18,GPIO.HIGH)
 
     else:
-      GPIO.output(4,GPIO.LOW)
+      GPIO.output(18,GPIO.LOW)
 
 
 

@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 
 # init list with pin numbers
 
-pinList = [18, 22, 27, 17]
+pinList = [x for x in range(20,30)]
 
 # loop through pins and set mode and state to 'off'
 
@@ -14,7 +14,7 @@ for i in pinList:
     GPIO.setup(i, GPIO.OUT) 
     GPIO.output(i, GPIO.HIGH)
 
-SleepTimeL = .5 # time to sleep between operations in the main loop
+SleepTimeL = 2 # time to sleep between operations in the main loop
 
 def main():
   #turn on one at a time then all off
@@ -50,5 +50,7 @@ def main():
   #clean exit
   print "Good bye!"
   GPIO.cleanup()
-if __name__ == '__main__':
-  main()
+
+main()
+
+
