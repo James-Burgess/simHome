@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 
 # init list with pin numbers
 
-pinList = [25, 4, 17, 18, 27, 22, 19, 26]
+pinList = [25, 4, 17, 18]
 
 # loop through pins and set mode and state to 'off'
 
@@ -30,8 +30,8 @@ def main():
 
   time.sleep(SleepTimeL);
 
-  #Flash all 5 times
-  for j in range (4):
+  #Flash all 2 times
+  for j in range (2):
 
     #all on
     for i in pinList:

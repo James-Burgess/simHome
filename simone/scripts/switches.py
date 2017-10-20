@@ -6,7 +6,7 @@ from time import sleep
 g.setmode(g.BCM)
 
 #Setup Pins
-lightList = [4, 17, 18] 
+lightList = [4, 17] 
 #4 bed #17 bath #18 Lounge
 for i in lightList: 
     g.setup(i, g.OUT) 
@@ -40,11 +40,10 @@ def main():
                     
                     if bath_input_state == False and state == 0:
                             lightSwitch(17)
-                            state = 1
-                            print (state)
+                            
 
                     elif bath_input_state == False and state == 1:
-                            lightSwitch(18)
+                            
                             state = 0
                             print (state)
 
